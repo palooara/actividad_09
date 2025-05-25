@@ -84,8 +84,8 @@ server.put("/contactos/:id", (req, res) => {
             if (!contactoActualizado) {
                 return res.status(404).send("Contacto no encontrado");
             }
-            console.log("Contacto actualizado en la base de datos:", contactoActualizado);
-            res.status(200).json(contactoActualizado); // Enviar el contacto actualizado como respuesta
+            console.log("Contacto actualizado en la base de datos");
+            res.status(200).send("Contacto actualizado en la base de datos"); // Enviar el contacto actualizado como respuesta
         })
         .catch(err => {
             console.error("Error al actualizar el contacto", err);

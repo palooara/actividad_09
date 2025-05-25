@@ -99,7 +99,7 @@ function eliminarContacto(index) {
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.onload = function() {
         if (xhr.status === 200) {
-            console.log("Contacto eliminado del servidor: " + xhr.responseText);
+            console.log( "Respuesta del servidor: " + xhr.responseText);
         } else {
             console.log("Error al eliminar el contacto del servidor: " + xhr.statusText);
         }
@@ -109,6 +109,7 @@ function eliminarContacto(index) {
 
 // Función para editar contactos
 function editarContacto(index) {
+    alert("Editar contacto");
     let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
     const contacto = contactos[index];
     const fechaNacimientoFormateada = new Date(contacto.fechaNacimiento).toISOString().split("T")[0];
